@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import com.paulmarcelinbejan.toolbox.utils.validation.ValidatorUtils;
 
-public interface CollectionValidator<REQUEST extends Collection<?>> extends Validator<REQUEST> {
+public interface CollectionValidator<TYPE_TO_VALIDATE, REQUEST extends Collection<TYPE_TO_VALIDATE>> extends Validator<REQUEST> {
 
 	@Override
 	public default void validate(REQUEST request) {
