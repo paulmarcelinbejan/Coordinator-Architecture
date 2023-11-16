@@ -10,7 +10,7 @@ import com.paulmarcelinbejan.architecture.sniper.validator.Validator;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public abstract class Sniper<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESPONSE> {
+public abstract class BaseSniper<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESPONSE> {
 
 	private final Validator<REQUEST> validator;
 	
@@ -28,7 +28,7 @@ public abstract class Sniper<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESPONSE> {
 		DOMAIN_INPUT domainInput = mapInput(request);
 		
 		// STEP 3: execute domain logic
-		DOMAIN_OUTPUT domainOutput = service.execute(domainInput);
+		DOMAIN_OUTPUT domainOutput = execute(domainInput);
 		
 		// STEP 4: map domain object to response
 		RESPONSE response = mapOutput(domainOutput);
@@ -44,6 +44,11 @@ public abstract class Sniper<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESPONSE> {
 	private DOMAIN_INPUT mapInput(REQUEST request) {
 		DOMAIN_INPUT domainInput = mapperInput.toDomain(request);
 		return domainInput;
+	}
+	
+	private DOMAIN_OUTPUT execute(DOMAIN_INPUT domainInput) throws FunctionalException, TechnicalException {
+		DOMAIN_OUTPUT domainOutput = service.execute(domainInput);
+		return domainOutput;
 	}
 	
 	private RESPONSE mapOutput(DOMAIN_OUTPUT domainOutput) {
