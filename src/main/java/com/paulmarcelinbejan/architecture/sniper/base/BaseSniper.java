@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.sniper;
+package com.paulmarcelinbejan.architecture.sniper.base;
 
 import com.paulmarcelinbejan.architecture.sniper.exception.FunctionalException;
 import com.paulmarcelinbejan.architecture.sniper.exception.TechnicalException;
