@@ -1,7 +1,7 @@
 package com.paulmarcelinbejan.architecture.sniper.service;
 
-import com.paulmarcelinbejan.architecture.sniper.exception.FunctionalException;
-import com.paulmarcelinbejan.architecture.sniper.exception.TechnicalException;
+import com.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
+import com.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 
 public interface Service<DOMAIN_INPUT, DOMAIN_OUTPUT> {
 

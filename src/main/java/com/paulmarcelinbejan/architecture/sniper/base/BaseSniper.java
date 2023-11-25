@@ -1,11 +1,11 @@
 package com.paulmarcelinbejan.architecture.sniper.base;
 
-import com.paulmarcelinbejan.architecture.sniper.exception.FunctionalException;
-import com.paulmarcelinbejan.architecture.sniper.exception.TechnicalException;
 import com.paulmarcelinbejan.architecture.sniper.mapper.input.MapperInput;
 import com.paulmarcelinbejan.architecture.sniper.mapper.output.MapperOutput;
 import com.paulmarcelinbejan.architecture.sniper.service.Service;
 import com.paulmarcelinbejan.architecture.sniper.validator.Validator;
+import com.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
+import com.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 
 import lombok.RequiredArgsConstructor;
 
