@@ -41,7 +41,7 @@ public abstract class BaseSniper<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESPONSE>
 		validator.validate(request);
 	}
 	
-	private DOMAIN_INPUT mapInput(REQUEST request) {
+	private DOMAIN_INPUT mapInput(REQUEST request) throws FunctionalException, TechnicalException {
 		DOMAIN_INPUT domainInput = mapperInput.toDomain(request);
 		return domainInput;
 	}
