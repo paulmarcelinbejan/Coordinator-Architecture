@@ -42,18 +42,15 @@ public abstract class BaseSniper<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESPONSE>
 	}
 	
 	private DOMAIN_INPUT mapInput(REQUEST request) throws FunctionalException, TechnicalException {
-		DOMAIN_INPUT domainInput = mapperInput.toDomain(request);
-		return domainInput;
+		return mapperInput.toDomain(request);
 	}
 	
 	private DOMAIN_OUTPUT execute(DOMAIN_INPUT domainInput) throws FunctionalException, TechnicalException {
-		DOMAIN_OUTPUT domainOutput = service.execute(domainInput);
-		return domainOutput;
+		return service.execute(domainInput);
 	}
 	
 	private RESPONSE mapOutput(DOMAIN_OUTPUT domainOutput) {
-		RESPONSE response = mapperOutput.toResponse(domainOutput);
-		return response;
+		return mapperOutput.toResponse(domainOutput);
 	}
 
 }
