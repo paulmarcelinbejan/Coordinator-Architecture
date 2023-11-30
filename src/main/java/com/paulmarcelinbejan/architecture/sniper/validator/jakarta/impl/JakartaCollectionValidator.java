@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.sniper.validator.jakarta;
+package com.paulmarcelinbejan.architecture.sniper.validator.jakarta.impl;
 
 import java.util.Collection;
 

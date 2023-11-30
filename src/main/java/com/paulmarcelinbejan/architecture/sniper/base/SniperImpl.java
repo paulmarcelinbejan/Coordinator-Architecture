@@ -10,7 +10,7 @@ import com.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public abstract class BaseSniper<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESPONSE> {
+public abstract class SniperImpl<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESPONSE> implements Sniper<REQUEST, RESPONSE> {
 
 	private final Validator<REQUEST> validator;
 	
