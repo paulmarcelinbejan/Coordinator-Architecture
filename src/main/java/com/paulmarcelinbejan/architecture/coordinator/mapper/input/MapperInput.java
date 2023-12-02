@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.sniper.mapper.input;
+package com.paulmarcelinbejan.architecture.coordinator.mapper.input;
 
 import com.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
 import com.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;

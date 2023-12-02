@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.paulmarcelinbejan.architecture</groupId>
-	<artifactId>sniper-architecture</artifactId>
+	<artifactId>coordinator-architecture</artifactId>
 	<version>1.0.0</version>
-	<name>Sniper Architecture</name>
-	<description>Sniper Architecture</description>
+	<name>Coordinator Architecture</name>
+	<description>Coordinator Architecture</description>
 	
 	<properties>
 		<!-- JAVA -->

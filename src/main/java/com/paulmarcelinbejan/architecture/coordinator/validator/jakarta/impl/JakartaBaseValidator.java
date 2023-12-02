@@ -1,6 +1,6 @@
-package com.paulmarcelinbejan.architecture.sniper.validator.jakarta.impl;
+package com.paulmarcelinbejan.architecture.coordinator.validator.jakarta.impl;
 
-import com.paulmarcelinbejan.architecture.sniper.validator.Validator;
+import com.paulmarcelinbejan.architecture.coordinator.validator.Validator;
 import com.paulmarcelinbejan.toolbox.utils.validation.ValidatorUtils;
 
 public interface JakartaBaseValidator<REQUEST> extends Validator<REQUEST> {

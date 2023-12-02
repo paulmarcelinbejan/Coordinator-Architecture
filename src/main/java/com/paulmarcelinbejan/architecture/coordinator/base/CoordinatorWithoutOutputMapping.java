@@ -1,16 +1,16 @@
-package com.paulmarcelinbejan.architecture.sniper.base;
+package com.paulmarcelinbejan.architecture.coordinator.base;
 
-import com.paulmarcelinbejan.architecture.sniper.SniperRequestAware;
-import com.paulmarcelinbejan.architecture.sniper.mapper.input.MapperInput;
-import com.paulmarcelinbejan.architecture.sniper.service.ServiceInputOutputAware;
-import com.paulmarcelinbejan.architecture.sniper.validator.Validator;
+import com.paulmarcelinbejan.architecture.coordinator.CoordinatorRequestAware;
+import com.paulmarcelinbejan.architecture.coordinator.mapper.input.MapperInput;
+import com.paulmarcelinbejan.architecture.coordinator.service.ServiceInputOutputAware;
+import com.paulmarcelinbejan.architecture.coordinator.validator.Validator;
 import com.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
 import com.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public abstract class SniperWithoutOutputMapping<REQUEST, DOMAIN_INPUT> implements SniperRequestAware<REQUEST> {
+public abstract class CoordinatorWithoutOutputMapping<REQUEST, DOMAIN_INPUT> implements CoordinatorRequestAware<REQUEST> {
 	
 	private final Validator<REQUEST> validator;
 	
@@ -19,7 +19,7 @@ public abstract class SniperWithoutOutputMapping<REQUEST, DOMAIN_INPUT> implemen
 	private final ServiceInputOutputAware<DOMAIN_INPUT, Void> service;
 	
 	@Override
-	public void fire(REQUEST request) throws FunctionalException, TechnicalException {
+	public void process(REQUEST request) throws FunctionalException, TechnicalException {
 		
 		// STEP 1: validate the request
 		validator.validate(request);

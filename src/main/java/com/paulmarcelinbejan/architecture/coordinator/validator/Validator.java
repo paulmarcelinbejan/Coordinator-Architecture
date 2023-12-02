@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.sniper.validator;
+package com.paulmarcelinbejan.architecture.coordinator.validator;
 
 public interface Validator<REQUEST> {
 	

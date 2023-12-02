@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.sniper.stereotype;
+package com.paulmarcelinbejan.architecture.coordinator.stereotype;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
-public @interface Sniper {
+public @interface Coordinator {
 
 	/**
 	 * The value may indicate a suggestion for a logical component name,

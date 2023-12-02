@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.sniper.service;
+package com.paulmarcelinbejan.architecture.coordinator.service;
 
 import com.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
 import com.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
