@@ -1,9 +1,9 @@
-package com.paulmarcelinbejan.architecture.coordinator.validator.jakarta.impl;
+package io.github.paulmarcelinbejan.coordinator.architecture.validator.jakarta;
 
 import java.util.Collection;
 
-import com.paulmarcelinbejan.architecture.coordinator.validator.Validator;
-import com.paulmarcelinbejan.toolbox.utils.validation.ValidatorUtils;
+import io.github.paulmarcelinbejan.coordinator.architecture.validator.Validator;
+import io.github.paulmarcelinbejan.toolbox.utils.validation.ValidatorUtils;
 
 public interface JakartaCollectionValidator<TYPE_TO_VALIDATE, REQUEST extends Collection<TYPE_TO_VALIDATE>> extends Validator<REQUEST> {
 

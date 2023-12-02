@@ -1,12 +1,11 @@
-package com.paulmarcelinbejan.architecture.coordinator.base;
+package io.github.paulmarcelinbejan.coordinator.architecture.coordinator.base;
 
-import com.paulmarcelinbejan.architecture.coordinator.CoordinatorRequestAware;
-import com.paulmarcelinbejan.architecture.coordinator.mapper.input.MapperInput;
-import com.paulmarcelinbejan.architecture.coordinator.service.ServiceInputOutputAware;
-import com.paulmarcelinbejan.architecture.coordinator.validator.Validator;
-import com.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
-import com.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
-
+import io.github.paulmarcelinbejan.coordinator.architecture.coordinator.awareable.CoordinatorRequestAware;
+import io.github.paulmarcelinbejan.coordinator.architecture.mapper.input.MapperInput;
+import io.github.paulmarcelinbejan.coordinator.architecture.service.ServiceInputOutputAware;
+import io.github.paulmarcelinbejan.coordinator.architecture.validator.Validator;
+import io.github.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
+import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

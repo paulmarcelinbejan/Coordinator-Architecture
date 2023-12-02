@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.coordinator.stereotype;
+package io.github.paulmarcelinbejan.coordinator.architecture.coordinator;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

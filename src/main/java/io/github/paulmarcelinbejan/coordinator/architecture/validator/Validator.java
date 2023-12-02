@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.coordinator.validator;
+package io.github.paulmarcelinbejan.coordinator.architecture.validator;
 
 public interface Validator<REQUEST> {
 	

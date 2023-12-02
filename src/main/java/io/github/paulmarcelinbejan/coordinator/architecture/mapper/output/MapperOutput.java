@@ -1,4 +1,4 @@
-package com.paulmarcelinbejan.architecture.coordinator.mapper.output;
+package io.github.paulmarcelinbejan.coordinator.architecture.mapper.output;
 
 public interface MapperOutput<DOMAIN, RESPONSE> {
 

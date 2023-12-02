@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.paulmarcelinbejan.architecture</groupId>
+	<groupId>io.github.paulmarcelinbejan.architecture</groupId>
 	<artifactId>coordinator-architecture</artifactId>
 	<version>1.0.0</version>
 	<name>Coordinator Architecture</name>
@@ -34,7 +34,7 @@
 			</dependency>
 			
 			<dependency>
-				<groupId>com.paulmarcelinbejan.toolbox</groupId>
+				<groupId>io.github.paulmarcelinbejan.toolbox</groupId>
 				<artifactId>toolbox</artifactId>
 				<version>${paulmarcelinbejan-toolbox.version}</version>
 				<scope>import</scope>
@@ -57,12 +57,12 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>com.paulmarcelinbejan.toolbox</groupId>
+			<groupId>io.github.paulmarcelinbejan.toolbox</groupId>
 			<artifactId>toolbox-exception</artifactId>
 		</dependency>
 		
 		<dependency>
-			<groupId>com.paulmarcelinbejan.toolbox</groupId>
+			<groupId>io.github.paulmarcelinbejan.toolbox</groupId>
 			<artifactId>toolbox-utils-validation</artifactId>
 		</dependency>
 
