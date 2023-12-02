@@ -1,1 +1,1 @@
-# Sniper-Architecture
+# Coordinator-Architecture
