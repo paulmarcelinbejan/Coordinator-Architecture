@@ -23,7 +23,7 @@
     
 	<groupId>io.github.paulmarcelinbejan.architecture</groupId>
 	<artifactId>coordinator-architecture</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>Coordinator Architecture</name>
 	<description>Coordinator Architecture</description>
 	
