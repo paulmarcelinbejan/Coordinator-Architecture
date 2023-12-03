@@ -7,20 +7,42 @@ import io.github.paulmarcelinbejan.toolbox.exception.functional.FunctionalExcept
 import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * A generic coordinator that coordinates 2 steps:
+ * <ol>
+ *   <li>validation of REQUEST</li>
+ *   <li>execute domain logic</li>
+ * </ol>
+ * 
+ * @param <REQUEST> The type of the incoming request.
+ */
 @RequiredArgsConstructor
 public abstract class CoordinatorWithoutMappings<REQUEST> implements CoordinatorRequestAware<REQUEST> {
 	
-	private final Validator<REQUEST> validator;
-	
-	private final ServiceInputAware<REQUEST> service;
-	
+    /**
+     * The validator responsible for validating the incoming request.
+     */
+    private final Validator<REQUEST> validator;
+
+    /**
+     * The service responsible for executing domain logic with the incoming request.
+     */
+    private final ServiceInputAware<REQUEST> service;
+
+    /**
+     * Process the incoming request by validating and executing domain logic.
+     *
+     * @param request The incoming request.
+     * @throws FunctionalException If a functional error occurs during processing.
+     * @throws TechnicalException  If a technical error occurs during processing.
+     */
 	@Override
 	public void process(REQUEST request) throws FunctionalException, TechnicalException {
 		
 		// STEP 1: validate the request
 		validator.validate(request);
 		
-		// STEP 3: execute domain logic
+		// STEP 2: execute domain logic
 		service.execute(request);
 		
 	}
