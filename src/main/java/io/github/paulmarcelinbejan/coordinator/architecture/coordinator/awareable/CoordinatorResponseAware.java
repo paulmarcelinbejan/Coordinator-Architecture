@@ -14,7 +14,7 @@ import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalExceptio
 public interface CoordinatorResponseAware<RESPONSE> {
 
     /**
-     * Process the response.
+     * Process a service logic and produce a response.
      *
      * @return The response after processing.
      * @throws FunctionalException If a functional error occurs during processing.
