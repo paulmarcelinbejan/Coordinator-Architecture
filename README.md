@@ -1,5 +1,5 @@
 # Coordinator-Architecture
-The Coordinator-Architecture enforces the use of Single-responsibility principle to improve the code structure.
+The Coordinator-Architecture enforces the use of Single-responsibility principle using Mediator Pattern with the aim of reducing coupling.
 
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.paulmarcelinbejan.architecture/coordinator-architecture.svg)](https://central.sonatype.com/artifact/io.github.paulmarcelinbejan.architecture/coordinator-architecture)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/paulmarcelinbejan/Coordinator-Architecture/blob/develop/LICENSE.txt)
