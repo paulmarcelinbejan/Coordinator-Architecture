@@ -1,193 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<url>https://github.com/paulmarcelinbejan/Coordinator-Architecture</url>
+  <url>https://github.com/paulmarcelinbejan/Coordinator-Architecture</url>
 
-	<licenses>
-	    <license>
-	        <name>MIT License</name>
-	        <url>http://www.opensource.org/licenses/mit-license.php</url>
-	    </license>
-	</licenses>
-	
-    <developers>
-        <developer>
-            <name>Paul Marcelin Bejan</name>
-            <email>paulmarcelinbejan.developer@gmail.com</email>
-            <organization>Paul Marcelin Bejan</organization>
-            <organizationUrl>https://github.com/paulmarcelinbejan</organizationUrl>
-        </developer>
-    </developers>
-    
-	<groupId>io.github.paulmarcelinbejan.architecture</groupId>
-	<artifactId>coordinator-architecture</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
-	<name>Coordinator Architecture</name>
-	<description>Coordinator Architecture</description>
-	
-	<distributionManagement>
-	    <snapshotRepository>
-	        <id>ossrh</id>
-	        <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-	    </snapshotRepository>
-	    <repository>
-	        <id>ossrh</id>
-	        <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-	    </repository>
-	</distributionManagement>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
 
-	<scm>
-	    <connection>scm:git:git://github.com/paulmarcelinbejan/Coordinator-Architecture.git</connection>
-	    <developerConnection>scm:git:ssh://github.com:paulmarcelinbejan/Coordinator-Architecture.git</developerConnection>
-	    <url>https://github.com/paulmarcelinbejan/Coordinator-Architecture</url>
-	</scm>
-	
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<!-- JAVA -->
-        <java.version>17</java.version>
-        <!-- MAVEN -->
-        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>3.6.0</maven-javadoc-plugin.version>
-        <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
-        <!-- SPRING -->
-        <spring-boot.version>3.1.0</spring-boot.version>
-        <!-- LOMBOK -->
-        <lombok.version>1.18.28</lombok.version>
-	    <!-- TOOLBOX -->
-		<paulmarcelinbejan-toolbox.version>1.0.0</paulmarcelinbejan-toolbox.version>
-	</properties>
-	
-	<dependencyManagement>
-		<dependencies>
-			
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				<version>${spring-boot.version}</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
-			
-			<dependency>
-				<groupId>io.github.paulmarcelinbejan.toolbox</groupId>
-				<artifactId>toolbox</artifactId>
-				<version>${paulmarcelinbejan-toolbox.version}</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
-	
-		</dependencies>
-	</dependencyManagement>
-	
-	<dependencies>
+  <developers>
+    <developer>
+      <name>Paul Marcelin Bejan</name>
+      <email>paulmarcelinbejan.developer@gmail.com</email>
+      <organization>Paul Marcelin Bejan</organization>
+      <organizationUrl>https://github.com/paulmarcelinbejan</organizationUrl>
+    </developer>
+  </developers>
 
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
+  <name>Coordinator Architecture</name>
+  <description>Coordinator Architecture</description>
 
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-context</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>io.github.paulmarcelinbejan.toolbox</groupId>
-			<artifactId>toolbox-exception</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>io.github.paulmarcelinbejan.toolbox</groupId>
-			<artifactId>toolbox-utils-validation</artifactId>
-		</dependency>
+  <groupId>io.github.paulmarcelinbejan.architecture</groupId>
+  <artifactId>coordinator-architecture</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	</dependencies>
+  <modules>
+    <module>coordinator-architecture-core</module>
+    <module>coordinator-architecture-impl</module>
+  </modules>
 
-	<build>
-		<pluginManagement>
-	        <plugins>
-			    <plugin>
-		            <groupId>org.apache.maven.plugins</groupId>
-		            <artifactId>maven-compiler-plugin</artifactId>
-		            <version>${maven-compiler-plugin.version}</version>
-		            <configuration>
-		                <source>${java.version}</source> <!-- depending on your project -->
-		                <target>${java.version}</target> <!-- depending on your project -->
-		                <encoding>${project.build.sourceEncoding}</encoding>
-		                <annotationProcessorPaths>
-		                    <path>
-				                <groupId>org.projectlombok</groupId>
-				                <artifactId>lombok</artifactId>
-				                <version>${lombok.version}</version>
-				            </path>
-		                </annotationProcessorPaths>
-		            </configuration>
-		        </plugin>
-	        </plugins>
-		</pluginManagement>
-		<plugins>
-		    <plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven-source-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>${maven-gpg-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>${nexus-staging-maven-plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+  <scm>
+    <connection>scm:git:git://github.com/paulmarcelinbejan/Coordinator-Architecture.git</connection>
+    <developerConnection>scm:git:ssh://github.com:paulmarcelinbejan/Coordinator-Architecture.git</developerConnection>
+    <url>https://github.com/paulmarcelinbejan/Coordinator-Architecture</url>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- JAVA -->
+    <java.version>17</java.version>
+    <!-- MAVEN -->
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+    <maven-javadoc-plugin.version>3.6.0</maven-javadoc-plugin.version>
+    <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+    <!-- SPRING -->
+    <spring-boot.version>3.1.0</spring-boot.version>
+    <!-- LOMBOK -->
+    <lombok.version>1.18.28</lombok.version>
+    <!-- TOOLBOX -->
+    <paulmarcelinbejan-toolbox.version>1.0.0</paulmarcelinbejan-toolbox.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>io.github.paulmarcelinbejan.toolbox</groupId>
+        <artifactId>toolbox</artifactId>
+        <version>${paulmarcelinbejan-toolbox.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>io.github.paulmarcelinbejan.architecture</groupId>
+        <artifactId>coordinator-architecture-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.paulmarcelinbejan.architecture</groupId>
+        <artifactId>coordinator-architecture-impl</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${java.version}</source>
+            <!-- depending on your project -->
+            <target>${java.version}</target>
+            <!-- depending on your project -->
+            <encoding>${project.build.sourceEncoding}</encoding>
+            <annotationProcessorPaths>
+              <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+              </path>
+            </annotationProcessorPaths>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${maven-source-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven-javadoc-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>${maven-gpg-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>${nexus-staging-maven-plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
