@@ -25,7 +25,7 @@
 
   <groupId>io.github.paulmarcelinbejan.architecture</groupId>
   <artifactId>coordinator-architecture</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
