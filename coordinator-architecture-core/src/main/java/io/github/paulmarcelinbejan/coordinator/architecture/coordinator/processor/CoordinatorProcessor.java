@@ -6,8 +6,6 @@ import io.github.paulmarcelinbejan.coordinator.architecture.service.ServiceInput
 import io.github.paulmarcelinbejan.coordinator.architecture.service.ServiceInputOutputAware;
 import io.github.paulmarcelinbejan.coordinator.architecture.service.ServiceOutputAware;
 import io.github.paulmarcelinbejan.coordinator.architecture.validator.Validator;
-import io.github.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
-import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -20,8 +18,6 @@ public class CoordinatorProcessor {
      *
      * @param request The incoming request.
      * @return The response after processing the request.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
 	public static <VALIDATOR extends Validator<REQUEST>, 
 				   MAPPER_INPUT extends MapperInput<REQUEST, DOMAIN_INPUT>, 
@@ -35,7 +31,7 @@ public class CoordinatorProcessor {
 					 MAPPER_INPUT mapperInput, 
 					 SERVICE service, 
 					 MAPPER_OUTPUT mapperOutput, 
-					 REQUEST request) throws FunctionalException, TechnicalException {
+					 REQUEST request) {
 		
 		// STEP 1: validate the request
 		validator.validate(request);
@@ -58,15 +54,13 @@ public class CoordinatorProcessor {
      * Process the response by executing domain logic and mapping the domain output to the final response.
      *
      * @return The response after processing the response.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
 	public static <SERVICE extends ServiceOutputAware<DOMAIN_OUTPUT>, 
 	   			   MAPPER_OUTPUT extends MapperOutput<DOMAIN_OUTPUT, RESPONSE>, 
 	   			   DOMAIN_OUTPUT, 
 	   			   RESPONSE> 
 	RESPONSE process(SERVICE service, 
-					 MAPPER_OUTPUT mapperOutput) throws FunctionalException, TechnicalException {
+					 MAPPER_OUTPUT mapperOutput) {
 		
 		// STEP 1: execute domain logic
 		DOMAIN_OUTPUT domainOutput = service.execute();
@@ -84,8 +78,6 @@ public class CoordinatorProcessor {
      *
      * @param request The incoming request.
      * @return The response after processing the request.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
 	public static <VALIDATOR extends Validator<REQUEST>, 
 	   			   SERVICE extends ServiceInputOutputAware<REQUEST, DOMAIN_OUTPUT>, 
@@ -96,7 +88,7 @@ public class CoordinatorProcessor {
 	RESPONSE process(VALIDATOR validator, 
 					 SERVICE service, 
 		             MAPPER_OUTPUT mapperOutput, 
-		             REQUEST request) throws FunctionalException, TechnicalException {
+		             REQUEST request) {
 		
 		// STEP 1: validate the request
 		validator.validate(request);
@@ -116,15 +108,13 @@ public class CoordinatorProcessor {
      * Process the incoming request by validating and executing domain logic.
      *
      * @param request The incoming request.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
 	public static <VALIDATOR extends Validator<REQUEST>,
 	   			   SERVICE extends ServiceInputAware<REQUEST>, 
 	   			   REQUEST> 
 	void process(VALIDATOR validator, 
 				 SERVICE service, 
-				 REQUEST request) throws FunctionalException, TechnicalException {
+				 REQUEST request) {
 		
 		// STEP 1: validate the request
 		validator.validate(request);
@@ -138,8 +128,6 @@ public class CoordinatorProcessor {
      * Process the incoming request by validating, mapping to domain input, and executing domain logic.
      *
      * @param request The incoming request.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
 	public static <VALIDATOR extends Validator<REQUEST>, 
 	   			   MAPPER_INPUT extends MapperInput<REQUEST, DOMAIN_INPUT>, 
@@ -149,7 +137,7 @@ public class CoordinatorProcessor {
 	void process(VALIDATOR validator, 
 				 MAPPER_INPUT mapperInput, 
 				 SERVICE service, 
-				 REQUEST request) throws FunctionalException, TechnicalException {
+				 REQUEST request) {
 		
 		// STEP 1: validate the request
 		validator.validate(request);

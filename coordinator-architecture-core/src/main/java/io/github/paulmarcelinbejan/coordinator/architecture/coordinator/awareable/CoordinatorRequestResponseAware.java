@@ -1,8 +1,5 @@
 package io.github.paulmarcelinbejan.coordinator.architecture.coordinator.awareable;
 
-import io.github.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
-import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
-
 /**
  * <p>
  * Interface for coordinators that are aware of the REQUEST to handle and the RESPONSE to return.
@@ -20,9 +17,7 @@ public interface CoordinatorRequestResponseAware<REQUEST, RESPONSE> {
      *
      * @param request The incoming request.
      * @return The response after processing the request.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
-	RESPONSE process(REQUEST request) throws FunctionalException, TechnicalException;
+	RESPONSE process(REQUEST request);
 	
 }

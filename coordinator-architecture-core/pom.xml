@@ -23,16 +23,6 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
     </dependency>
-    
-    <dependency>
-      <groupId>io.github.paulmarcelinbejan.toolbox</groupId>
-      <artifactId>toolbox-exception</artifactId>
-    </dependency>
-    
-    <dependency>
-      <groupId>io.github.paulmarcelinbejan.toolbox</groupId>
-      <artifactId>toolbox-utils-validation</artifactId>
-    </dependency>
 
   </dependencies>
 

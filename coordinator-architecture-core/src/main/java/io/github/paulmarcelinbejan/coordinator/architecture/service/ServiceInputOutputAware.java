@@ -1,8 +1,5 @@
 package io.github.paulmarcelinbejan.coordinator.architecture.service;
 
-import io.github.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
-import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
-
 /**
  * An interface for services that execute domain logic with domain input, producing domain output.
  *
@@ -16,9 +13,7 @@ public interface ServiceInputOutputAware<DOMAIN_INPUT, DOMAIN_OUTPUT> {
      *
      * @param domain The domain input.
      * @return The domain output after execution.
-     * @throws FunctionalException If a functional error occurs during execution.
-     * @throws TechnicalException  If a technical error occurs during execution.
      */
-    DOMAIN_OUTPUT execute(DOMAIN_INPUT domain) throws FunctionalException, TechnicalException;
+	DOMAIN_OUTPUT execute(DOMAIN_INPUT domain);
 
 }

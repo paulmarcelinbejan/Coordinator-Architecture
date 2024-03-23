@@ -6,8 +6,6 @@ import io.github.paulmarcelinbejan.coordinator.architecture.mapper.input.MapperI
 import io.github.paulmarcelinbejan.coordinator.architecture.mapper.output.MapperOutput;
 import io.github.paulmarcelinbejan.coordinator.architecture.service.ServiceInputOutputAware;
 import io.github.paulmarcelinbejan.coordinator.architecture.validator.Validator;
-import io.github.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
-import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -54,11 +52,9 @@ public abstract class CoordinatorFull<REQUEST, DOMAIN_INPUT, DOMAIN_OUTPUT, RESP
      *
      * @param request The incoming request.
      * @return The response after processing the request.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
 	@Override
-	public RESPONSE process(REQUEST request) throws FunctionalException, TechnicalException {
+	public RESPONSE process(REQUEST request) {
 		
 		return CoordinatorProcessor.process(validator, mapperInput, service, mapperOutput, request);
 		

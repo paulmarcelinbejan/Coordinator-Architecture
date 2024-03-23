@@ -4,8 +4,6 @@ import io.github.paulmarcelinbejan.coordinator.architecture.coordinator.awareabl
 import io.github.paulmarcelinbejan.coordinator.architecture.coordinator.processor.CoordinatorProcessor;
 import io.github.paulmarcelinbejan.coordinator.architecture.mapper.output.MapperOutput;
 import io.github.paulmarcelinbejan.coordinator.architecture.service.ServiceOutputAware;
-import io.github.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
-import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -37,11 +35,9 @@ public abstract class CoordinatorServiceResponse<DOMAIN_OUTPUT, RESPONSE> implem
      * Process the response by executing domain logic and mapping the domain output to the final response.
      *
      * @return The response after processing the response.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
 	@Override
-	public RESPONSE process() throws FunctionalException, TechnicalException {
+	public RESPONSE process() {
 		
 		return CoordinatorProcessor.process(service, mapperOutput);
 		

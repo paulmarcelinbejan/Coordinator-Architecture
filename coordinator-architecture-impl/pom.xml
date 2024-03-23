@@ -18,6 +18,11 @@
           <groupId>io.github.paulmarcelinbejan.architecture</groupId>
           <artifactId>coordinator-architecture-core</artifactId>
       </dependency>
+      
+      <dependency>
+	      <groupId>io.github.paulmarcelinbejan.toolbox</groupId>
+	      <artifactId>toolbox-utils-validation</artifactId>
+	  </dependency>
 
   </dependencies>
 

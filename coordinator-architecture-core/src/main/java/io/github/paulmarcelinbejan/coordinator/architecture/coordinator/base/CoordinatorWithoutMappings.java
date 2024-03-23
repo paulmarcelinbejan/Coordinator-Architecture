@@ -4,8 +4,6 @@ import io.github.paulmarcelinbejan.coordinator.architecture.coordinator.awareabl
 import io.github.paulmarcelinbejan.coordinator.architecture.coordinator.processor.CoordinatorProcessor;
 import io.github.paulmarcelinbejan.coordinator.architecture.service.ServiceInputAware;
 import io.github.paulmarcelinbejan.coordinator.architecture.validator.Validator;
-import io.github.paulmarcelinbejan.toolbox.exception.functional.FunctionalException;
-import io.github.paulmarcelinbejan.toolbox.exception.technical.TechnicalException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -35,11 +33,9 @@ public abstract class CoordinatorWithoutMappings<REQUEST> implements Coordinator
      * Process the incoming request by validating and executing domain logic.
      *
      * @param request The incoming request.
-     * @throws FunctionalException If a functional error occurs during processing.
-     * @throws TechnicalException  If a technical error occurs during processing.
      */
 	@Override
-	public void process(REQUEST request) throws FunctionalException, TechnicalException {
+	public void process(REQUEST request) {
 		
 		CoordinatorProcessor.process(validator, service, request);
 		
